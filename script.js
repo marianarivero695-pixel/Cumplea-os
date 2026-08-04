@@ -102,47 +102,21 @@ text: "Feliz cumpleaños ✨\n\n-MR"
 
    function showMessage(content){
 
-    clearTimeout(typingTimer);
-
     text.classList.remove("show");
 
     setTimeout(() => {
 
-        text.innerHTML = "";
+        text.innerHTML = content;
 
         text.classList.add("show");
 
-        typeText(content);
-
-    },500);
+    },600);
 
 }
 
 
 
-  function typeText(content){
 
-    let i = 0;
-
-    clearTimeout(typingTimer);
-
-    function typing(){
-
-        if(i < content.length){
-
-            text.innerHTML += content[i];
-
-            i++;
-
-            typingTimer = setTimeout(typing,80);
-
-        }
-
-    }
-
-    typing();
-
-}
 
 
 
