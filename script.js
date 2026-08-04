@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         {
             time: 105,
-            text: "Que nunca te falten motivos para sonreír, personas que te quieran y razones para seguir brillando.\n\nTe deseo siempre lo mejor del mundo."
+            text: "Que nunca te falten motivos para sonreír, personas que te quieran y razones para seguir brillando.<br><br>Te deseo siempre lo mejor del mundo."
         },
 
         {
@@ -37,10 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         {
             time: 195,
-            text: "Feliz cumpleaños ✨\n\n-MR"
+            text: "Feliz cumpleaños ✨<br><br>-MR"
         }
 
     ];
+
+
+    let currentMessage = -1;
+
 
 
     button.addEventListener("click", () => {
@@ -53,38 +57,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         message.classList.remove("hidden");
+
         constellation.classList.remove("hidden");
 
 
-        startShootingStar();
+        showShootingStar();
 
-
-        let currentMessage = -1;
 
 
         music.addEventListener("timeupdate", () => {
 
 
-            let currentTime = music.currentTime;
-
-
             messages.forEach((item, index) => {
 
 
-                if(currentTime >= item.time && index !== currentMessage){
-
+                if(
+                    music.currentTime >= item.time &&
+                    index !== currentMessage
+                ){
 
                     currentMessage = index;
 
                     showMessage(item.text);
 
 
-                    if(index === 0 || index === 2 || index === 5){
+                    if(index === 0 || index === 3 || index === 5){
 
-                        startShootingStar();
+                        showShootingStar();
 
                     }
-
 
                 }
 
@@ -93,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         });
+
 
 
     });
@@ -105,74 +107,168 @@ document.addEventListener("DOMContentLoaded", () => {
         text.classList.remove("show");
 
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
 
-            text.innerHTML = content.replace(/\n/g, "<br>");
+            text.innerHTML = "";
+
+            typeText(content);
+
 
             text.classList.add("show");
 
 
-        },700);
-
+        },400);
 
 
     }
 
 
 
-    function startShootingStar(){
+
+    function typeText(content){
+
+
+        let cleanText = content.replace(/<br><br>/g,"\n");
+
+        let i = 0;
+
+
+        function typing(){
+
+
+            if(i < cleanText.length){
+
+
+                if(cleanText[i] === "\n"){
+
+                    text.innerHTML += "<br><br>";
+
+                }else{
+
+                    text.innerHTML += cleanText[i];
+
+                }
+
+
+                i++;
+
+
+                setTimeout(typing,50);
+
+
+            }
+
+
+        }
+
+
+        typing();
+
+
+    }
+
+
+
+
+
+    function showShootingStar(){
 
 
         shootingStar.classList.remove("shooting");
 
-
         void shootingStar.offsetWidth;
-
 
         shootingStar.classList.add("shooting");
 
 
     }
- 
 
-       music.addEventListener("ended", () => {
+
+
+
+    music.addEventListener("ended", () => {
+
 
         text.classList.remove("show");
 
-        setTimeout(() => {
 
-            text.innerHTML = 
-            "Siempre recuerda lo especial que eres ✨<br><br>Gracias por existir.<br><br>-MR";
+        setTimeout(()=>{
+
+
+            text.innerHTML =
+            "Siempre recuerda lo especial que eres ✨";
+
 
             text.classList.add("show");
 
-            constellation.style.transform = "scale(1.5)";
 
-            createStars();
 
-        }, 1000);
+        },800);
+
+
+
+        setTimeout(()=>{
+
+
+            text.classList.remove("show");
+
+
+
+            setTimeout(()=>{
+
+
+                text.innerHTML =
+                "Gracias por existir.<br><br>-MR";
+
+
+                text.classList.add("show");
+
+
+                createStars();
+
+
+            },800);
+
+
+
+        },5000);
+
 
 
     });
 
 
 
+
     function createStars(){
+
 
         for(let i = 0; i < 40; i++){
 
+
             let star = document.createElement("div");
+
 
             star.className = "falling-star";
 
-            star.style.left = Math.random() * 100 + "%";
-            star.style.animationDelay = Math.random() * 3 + "s";
+
+            star.style.left =
+            Math.random()*100 + "%";
+
+
+            star.style.animationDelay =
+            Math.random()*3 + "s";
+
 
             document.body.appendChild(star);
 
+
         }
 
+
     }
+
+
 
 });
