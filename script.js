@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-
+console.log("hasta aquí funciona");
+    
     let currentMessage = -1;
 
 
