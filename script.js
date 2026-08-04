@@ -10,37 +10,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const messages = [
 
-        {
-            time: 5,
-            text: "Tu cumpleaños nunca será un día cualquiera"
-        },
+      {
+time: 5,
+text: "Tu cumpleaños nunca será un día cualquiera"
+},
 
-        {
-            time: 25,
-            text: "Porque hay personas que llegan a nuestras vidas y hacen que los días normales se conviertan en recuerdos inolvidables."
-        },
+{
+time: 35,
+text: "Porque hay personas que llegan a nuestras vidas y hacen que los días normales se conviertan en recuerdos inolvidables."
+},
 
-        {
-            time: 60,
-            text: "Hoy no solo celebramos una fecha... celebramos tu existencia, tus momentos, tus sueños y todo lo bonito que todavía está por venir."
-        },
+{
+time: 75,
+text: "Hoy no solo celebramos una fecha... celebramos tu existencia, tus momentos, tus sueños y todo lo bonito que todavía está por venir."
+},
 
-        {
-            time: 105,
-            text: "Que nunca te falten motivos para sonreír, personas que te quieran y razones para seguir brillando.<br><br>Te deseo siempre lo mejor del mundo."
-        },
+{
+time: 125,
+text: "Que nunca te falten motivos para sonreír, personas que te quieran y razones para seguir brillando. Te deseo siempre lo mejor del mundo."
+},
 
-        {
-            time: 155,
-            text: "Gracias por ser una persona tan especial. Te quiero."
-        },
+{
+time: 190,
+text: "Gracias por ser una persona tan especial. Te quiero."
+},
 
-        {
-            time: 195,
-            text: "Feliz cumpleaños ✨<br><br>-MR"
-        }
-
-    ];
+{
+time: 230,
+text: "Feliz cumpleaños ✨\n\n-MR"
+}
 
 
     let currentMessage = -1;
