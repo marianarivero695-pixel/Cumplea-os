@@ -1,1 +1,180 @@
-html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:sans-serif}.c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}button{padding:14px 28px;border-radius:30px;background:#f6e7b0;border:none}canvas{position:fixed;inset:0}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle, #111936, #02030b);
+    color: white;
+    font-family: Georgia, serif;
+}
+
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveStars 20s linear infinite;
+}
+
+
+@keyframes moveStars {
+
+    from {
+        background-position:0 0;
+    }
+
+    to {
+        background-position:100px 200px;
+    }
+
+}
+
+
+
+.container {
+
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    position:relative;
+    z-index:2;
+
+}
+
+
+
+button {
+
+    padding:15px 40px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#111936;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+
+button:hover {
+
+    transform:scale(1.1);
+
+}
+
+
+
+#message {
+
+    margin-top:40px;
+    max-width:90%;
+    text-align:center;
+
+}
+
+
+
+#text {
+
+    font-size:32px;
+    font-style:italic;
+    line-height:1.5;
+
+}
+
+
+
+.constellation {
+
+    margin-top:50px;
+    font-size:35px;
+    letter-spacing:20px;
+
+}
+
+
+
+.hidden {
+
+    display:none;
+
+}
+
+
+
+.shooting-star {
+
+    position:absolute;
+    width:150px;
+    height:2px;
+    background:white;
+    top:20%;
+    left:-200px;
+    transform:rotate(35deg);
+    opacity:0;
+
+}
+
+
+
+.shooting {
+
+    animation:shoot 2s ease forwards;
+
+}
+
+
+
+@keyframes shoot {
+
+    0%{
+        left:-200px;
+        opacity:0;
+    }
+
+
+    30%{
+        opacity:1;
+    }
+
+
+    100%{
+
+        left:120%;
+        top:70%;
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+@media(max-width:600px){
+
+    #text{
+
+        font-size:24px;
+
+    }
+
+
+    button{
+
+        font-size:18px;
+
+    }
+
+}
