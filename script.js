@@ -111,14 +111,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             text.innerHTML = "";
+text.classList.add("show");
 
-            typeText(content);
-
-
-            text.classList.add("show");
-
-
-        },400);
+setTimeout(() => {
+    typeText(content);
+}, 300);
 
 
     }
