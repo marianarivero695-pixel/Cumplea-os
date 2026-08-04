@@ -134,7 +134,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     }
- music.addEventListener("ended", () => {
+ 
+
+       music.addEventListener("ended", () => {
 
         text.classList.remove("show");
 
@@ -153,5 +155,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     });
+
+
+
+    function createStars(){
+
+        for(let i = 0; i < 40; i++){
+
+            let star = document.createElement("div");
+
+            star.className = "falling-star";
+
+            star.style.left = Math.random() * 100 + "%";
+            star.style.animationDelay = Math.random() * 3 + "s";
+
+            document.body.appendChild(star);
+
+        }
+
+    }
 
 });
