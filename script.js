@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         text.classList.remove("show");
 
 
-        setTimeout(() => {
+        setTimeout(typing,85);
 
 
             text.innerHTML = "";
