@@ -101,21 +101,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    function showMessage(content){
+   function showMessage(content){
 
 
-        text.classList.remove("show");
+    text.classList.remove("show");
 
 
-        setTimeout(typing,85);
+    setTimeout(() => {
 
 
-            text.innerHTML = "";
-text.classList.add("show");
+        text.innerHTML = "";
 
-setTimeout(() => {
-    typeText(content);
-}, 300);
+        text.classList.add("show");
+
+
+        typeText(content);
+
+
+    },400);
+
+
+}
 
 
     }
