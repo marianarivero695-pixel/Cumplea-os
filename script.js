@@ -1,1 +1,59 @@
-const txt="Feliz cumpleaños ✨";let i=0;const h=document.getElementById("t");(function w(){if(i<txt.length){h.textContent+=txt[i++];setTimeout(w,90)}})();b.onclick=()=>a.play();const c=stars,x=c.getContext("2d");function r(){c.width=innerWidth;c.height=innerHeight}onresize=r;r();let s=[...Array(180)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*2}));setInterval(()=>{x.clearRect(0,0,c.width,c.height);x.fillStyle="white";s.forEach(o=>{x.beginPath();x.arc(o.x,o.y,o.r,0,7);x.fill()})},30);
+const button = document.getElementById("startButton");
+const music = document.getElementById("music");
+const message = document.getElementById("message");
+const text = document.getElementById("text");
+const constellation = document.querySelector(".constellation");
+const shootingStar = document.querySelector(".shooting-star");
+
+
+const phrase = 
+"Tu cumpleaños nunca será un día cualquiera\n-MR";
+
+
+button.addEventListener("click", ()=>{
+
+
+    music.play();
+
+
+    button.style.display="none";
+
+
+    message.classList.remove("hidden");
+
+
+    constellation.classList.remove("hidden");
+
+
+    shootingStar.classList.add("shooting");
+
+
+
+    let i=0;
+
+
+    function typing(){
+
+
+        if(i < phrase.length){
+
+
+            text.innerHTML += phrase[i] === "\n"
+            ? "<br>"
+            : phrase[i];
+
+
+            i++;
+
+            setTimeout(typing,90);
+
+        }
+
+
+    }
+
+
+    typing();
+
+
+});
