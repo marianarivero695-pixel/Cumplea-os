@@ -134,6 +134,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     }
+ music.addEventListener("ended", () => {
 
+        text.classList.remove("show");
+
+        setTimeout(() => {
+
+            text.innerHTML = 
+            "Siempre recuerda lo especial que eres ✨<br><br>Gracias por existir.<br><br>-MR";
+
+            text.classList.add("show");
+
+            constellation.style.transform = "scale(1.5)";
+
+            createStars();
+
+        }, 1000);
+
+
+    });
 
 });
