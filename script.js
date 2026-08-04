@@ -16,7 +16,7 @@ text: "Tu cumpleaños nunca será un día cualquiera"
 },
 
 {
-time: 35,
+time: 40,
 text: "Porque hay personas que llegan a nuestras vidas y hacen que los días normales se conviertan en recuerdos inolvidables."
 },
 
@@ -42,6 +42,7 @@ text: "Feliz cumpleaños ✨\n\n-MR"
 
 
     let currentMessage = -1;
+    let typingTimer;
 
 
 
@@ -101,6 +102,8 @@ text: "Feliz cumpleaños ✨\n\n-MR"
 
    function showMessage(content){
 
+    clearTimeout(typingTimer);
+
     text.classList.remove("show");
 
     setTimeout(() => {
@@ -111,33 +114,31 @@ text: "Feliz cumpleaños ✨\n\n-MR"
 
         typeText(content);
 
-    },800);
+    },500);
 
 }
 
 
 
-    function typeText(content){
+  function typeText(content){
 
     let i = 0;
 
-    text.innerHTML = "";
-
+    clearTimeout(typingTimer);
 
     function typing(){
 
         if(i < content.length){
 
-            text.innerHTML += content.charAt(i);
+            text.innerHTML += content[i];
 
             i++;
 
-            setTimeout(typing,70);
+            typingTimer = setTimeout(typing,80);
 
         }
 
     }
-
 
     typing();
 
