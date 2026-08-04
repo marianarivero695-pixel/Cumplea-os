@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 i++;
 
 
-                setTimeout(typing,50);
+                setTimeout(typing,80);
 
 
             }
