@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const messages = [
-        {
-            time: 5,
-            text: "Tu cumpleaños nunca será un día cualquiera<br><br>-MR"
+       {
+    time: 5,
+    text: "Tu cumpleaños nunca será un día cualquiera"
         },
 
         {
