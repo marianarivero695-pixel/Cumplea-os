@@ -103,17 +103,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
    function showMessage(content){
 
+
     text.classList.remove("show");
 
+
     setTimeout(() => {
+
 
         text.innerHTML = "";
 
         text.classList.add("show");
 
+
         typeText(content);
 
-    }, 400);
+
+    },400);
+
 
 }
 
