@@ -103,23 +103,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
    function showMessage(content){
 
-
     text.classList.remove("show");
 
-
     setTimeout(() => {
-
 
         text.innerHTML = "";
 
         text.classList.add("show");
 
-
         typeText(content);
 
-
-    },400);
-
+    },800);
 
 }
 
@@ -127,46 +121,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function typeText(content){
 
+    let i = 0;
 
-        let cleanText = content.replace(/<br><br>/g,"\n");
-
-        let i = 0;
-
-
-        function typing(){
+    text.innerHTML = "";
 
 
-            if(i < cleanText.length){
+    function typing(){
 
+        if(i < content.length){
 
-                if(cleanText[i] === "\n"){
+            text.innerHTML += content.charAt(i);
 
-                    text.innerHTML += "<br><br>";
+            i++;
 
-                }else{
-
-                    text.innerHTML += cleanText[i];
-
-                }
-
-
-                i++;
-
-
-                setTimeout(typing,80);
-
-
-            }
-
+            setTimeout(typing,70);
 
         }
 
-
-        typing();
-
-
     }
 
+
+    typing();
+
+}
 
 
 
